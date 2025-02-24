@@ -19,6 +19,10 @@ pipeline {
                 }
                 echo " This is a ${env.BRANCH_NAME} "
             }
+	    	when {
+		    expression { env.BRANCH_NAME == feature }
+		}
+		echo " This is a not a Master Branch "
         }
     }
 }
